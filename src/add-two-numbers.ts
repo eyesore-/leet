@@ -29,4 +29,20 @@ class ListNode {
 function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null,
-): ListNode | null {}
+): ListNode | null {
+  function sum(
+    nX: ListNode | null,
+    nY: ListNode | null,
+    r: number,
+  ): ListNode | null {
+    if (nX === null && nY === null && r === 0) return null;
+
+    const v = (nX?.val ?? 0) + (nY?.val ?? 0) + r;
+    return new ListNode(
+      v % 10,
+      sum(nX?.next || null, nY?.next || null, Math.floor(v / 10)),
+    );
+  }
+
+  return sum(l1, l2, 0);
+}
