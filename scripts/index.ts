@@ -1,7 +1,7 @@
 import path from "node:path";
 
 const fromRoot = (p: string) => path.join(import.meta.dir, "../", p);
-const config = Bun.file(fromRoot`leet.config.json`);
+const config = Bun.file(fromRoot(`leet.config.json`));
 
 const slug = Bun.argv[2];
 
@@ -33,7 +33,7 @@ function main(slug: string) {
     headers: {
       "Content-Type": "application/json",
       Cookie: `LEETCODE_SESSION=${Bun.env.LEETCODE_SESSION}`,
-      "x-csrftoken": Bun.env.CSRF_TOKEN,
+      "x-csrftoken": Bun.env.CSRF_TOKEN ?? "",
     },
     body: questionEditorDataQuery(slug),
   })
