@@ -1,0 +1,15 @@
+{
+  "name": "leet",
+  "module": "scripts/index.ts",
+  "type": "module",
+  "scripts": {
+    "pull": "bun scripts/index.ts",
+    "reset": "echo '{\"data\": []}' > leet.config.json"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
