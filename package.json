@@ -3,7 +3,7 @@
   "module": "scripts/index.ts",
   "type": "module",
   "scripts": {
-    "pull": "bun scripts/index.ts",
+    "gen": "bun scripts/index.ts",
     "reset": "echo '{\"data\": []}' > leet.config.json"
   },
   "devDependencies": {
